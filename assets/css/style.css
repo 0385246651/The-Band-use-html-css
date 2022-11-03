@@ -48,7 +48,7 @@ html{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 1;   
 }
 
 #nav{
@@ -107,7 +107,15 @@ html{
 
 }
 
-#header .search-btn {
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .search-btn ,
+#header .mobile-menu-btn{
     float: right;
     padding: 0 21px;   
 }
@@ -117,9 +125,19 @@ html{
     cursor: pointer;
 }
 
-#header .search-icon{
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .search-icon,
+#header .menu-icon{
     line-height: 46px;
     color: #fff;
+    font-size: 20px;
 }
 
 #nav .subnav a{
@@ -133,7 +151,7 @@ html{
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background: url('/assets/imgs/slider/slider1.jpg') top center / cover no-repeat;
+    background: url('../imgs/slider/slider1.jpg') top center / cover no-repeat;
 } 
 
 #slider .text-content{
@@ -152,7 +170,8 @@ html{
 
 #slider .text-description{
     font-size: 15px;
-    
+    text-shadow: 0 0 1px #000;
+    margin-top: 25px;
 }
 
 #content{
@@ -161,10 +180,12 @@ html{
 
 #content .content-section{
     width: 800px;
+    max-width: 100%;
     padding: 64px 0px 112px;
     margin-left: auto;
     margin-right: auto;
-
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading{
@@ -498,5 +519,83 @@ html{
     }
     to{
         transform: translateY(0);
+    }
+}
+
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+}
+
+@media (max-width: 46.25em) {
+    #header{
+        overflow: hidden;
+    }
+
+    #header .mobile-menu-btn{
+        display: block;
+    }
+
+    #header .search-btn {
+        display: none;
+    }
+    #nav{
+        display: block;
+    }
+    #nav > li{
+        display: block;
+    }
+    
+    #nav > li:first-child{
+        display: inline-block;
+    }
+    #nav .subnav{
+        position: initial;
+        background-color: #333;
+    }
+    #nav .subnav a{
+        color: #fff;
+        padding: 5px 41px;
+    }
+
+    #nav li a{
+        padding: 1px 24px;
+    }
+
+    #content .member-item{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    #content .member-img{
+        width: 60%;
+    }
+
+    .place-item{
+        width: 100%;
+        padding: 8px;
+    }
+
+    .form-mobile{
+        width: 100% ;
+        padding: 8px 0;
+    }
+
+    .col-form-mobile{
+        width: 100%;
+        padding: 8px ;
+    }
+
+    .mobile-btn{
+        width: 100%;
+    }
+}
+
+@media (max-width: 63.9375em) {
+    #footer .social-lisst {
+        font-size: 40px;
+    }
+
+    .coppyright{
+        font-size: 30px;
     }
 }
